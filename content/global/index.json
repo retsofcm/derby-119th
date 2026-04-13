@@ -1,0 +1,99 @@
+{
+  "header": {
+    "icon": {
+      "color": "logo-purple",
+      "style": "float"
+    },
+    "name": "119th Derby Scout Group",
+    "color": "default",
+    "nav": [
+      {
+        "title": "About Us",
+        "url": "/about-us"
+      },
+      {
+        "title": "Our Sections",
+        "links": [
+          {
+            "label": "Squirrels",
+            "url": "/squirrels"
+          },
+          {
+            "label": "Beavers",
+            "url": "/beavers"
+          },
+          {
+            "label": "Cubs",
+            "url": "/cubs"
+          },
+          {
+            "label": "Scouts",
+            "url": "/scouts"
+          }
+        ]
+      },
+      {
+        "title": "Volunteering",
+        "url": "/volunteering"
+      },
+      {
+        "title": "Contact Us",
+        "url": "/contact"
+      }
+    ]
+  },
+  "footer": {
+    "social": [],
+    "columns": [
+      {
+        "title": "Information",
+        "links": [
+          {
+            "label": "About Us",
+            "url": "/about-us"
+          },
+          {
+            "label": "Volunteering",
+            "url": "/volunteering"
+          },
+          {
+            "label": "Contact",
+            "url": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Our Sections",
+        "links": [
+          {
+            "label": "Squirrels",
+            "url": "/squirrels"
+          },
+          {
+            "label": "Beavers",
+            "url": "/beavers"
+          },
+          {
+            "label": "Cubs",
+            "url": "/cubs"
+          },
+          {
+            "label": "Scouts",
+            "url": "/scouts"
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "line1": "Sinfin Moor Ecumenical Church",
+      "line2": "Arleston Lane",
+      "postcode": "DE24 3DH",
+      "email": "hello@derbysouthscouts.org.uk"
+    }
+  },
+  "theme": {
+    "color": "purple",
+    "font": "sans",
+    "darkMode": "light"
+  }
+}

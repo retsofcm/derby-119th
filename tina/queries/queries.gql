@@ -1,0 +1,22 @@
+query contentQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  page(relativePath: $relativePath) {
+    ...PageParts
+  }
+}
+
+query eventConnectionQuery {
+  eventConnection {
+    edges {
+      node {
+        ...EventParts
+      }
+    }
+  }
+}
+
+query eventQuery($relativePath: String!) {
+  event(relativePath: $relativePath) {
+    ...EventParts
+  }
+}

@@ -1,0 +1,54 @@
+"use client";
+import React from "react";
+
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import type { Template } from "tinacms";
+import { PageBlocksContent } from "../../tina/__generated__/types";
+import { tinaField } from "tinacms/dist/react";
+
+
+export const Content = ({ data }: { data: PageBlocksContent }) => {
+  return (
+    <section className="flex flex-col mx-auto px-4 md:px-0 prose prose-lg">
+      {data.heading && (
+        <h2 
+          className="text-[32px] font-light leading-[2] mb-6 underline decoration-logo-gold underline-offset-3"
+          style={{
+            textDecorationColor: '#E7B824',
+            textDecorationThickness: '3px',
+            textUnderlineOffset: '16px',
+          }}
+        >
+          <span data-tina-field={tinaField(data, "heading")}>{data.heading}</span>
+        </h2>
+      )}
+      <div
+        data-tina-field={tinaField(data, "body")}
+      >
+        <TinaMarkdown
+          content={data.body}
+        />
+      </div>
+    </section>
+  );
+};
+
+export const contentBlockSchema: Template = {
+  name: "content",
+  label: "Rich Text",
+  ui: {
+    previewSrc: "/blocks/rich-text.png",
+  },
+  fields: [
+    {
+      type: "string",
+      label: "Heading",
+      name: "heading",
+    },
+    {
+      type: "rich-text",
+      label: "Body",
+      name: "body",
+    }
+  ],
+};
