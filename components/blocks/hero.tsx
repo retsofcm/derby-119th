@@ -7,6 +7,7 @@ import { PageBlocksHero } from '../../tina/__generated__/types';
 import { TextEffect } from '../motion-primitives/text-effect';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { MediaBlock } from '@/components/ui/media-block';
+import { sectionLogosHero } from '@/utils/sectionLogos';
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -115,26 +116,25 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             )}
           </div>
 
-          {(data.day || data.time || data.location) && (
+          {data.location && (
             <div className="absolute bottom-4 left-4 right-4 text-center lg:static lg:self-end lg:mb-4 lg:mr-0 lg:text-right">
               <div className="text-white">
-                {data.day && (
-                  <div data-tina-field={tinaField(data, 'day')}>
-                    <p className="text-logo-purple font-black uppercase text-[20px]">{data.day}</p>
-                  </div>
-                )}
-                {data.time && (
-                  <div data-tina-field={tinaField(data, 'time')}>
-                    <p className="text-logo-purple font-black text-[20px]">{data.time}</p>
-                  </div>
-                )}
-                {data.location && (
-                  <div data-tina-field={tinaField(data, 'location')} className="mt-3 text-[16px]">
-                    {data.location.split(',').map((part, index) => (
-                      <div key={index}>{part.trim()}</div>
-                    ))}
-                  </div>
-                )}
+                <div data-tina-field={tinaField(data, 'location')} className="text-[16px] mb-4">
+                  {data.location.split(',').map((part, index) => (
+                    <div key={index}>{part.trim()}</div>
+                  ))}
+                </div>
+
+                {/* Section logos row */}
+                <div className="flex flex-row gap-4 items-center justify-center flex-wrap mt-3">
+                  {(['Squirrels', 'Beavers', 'Cubs', 'Scouts'] as const).map((name) => (
+                    <div
+                      key={name}
+                      className="h-5 w-auto flex items-center"
+                      dangerouslySetInnerHTML={{ __html: sectionLogosHero[name] }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           )}
