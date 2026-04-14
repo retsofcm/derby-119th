@@ -146,7 +146,7 @@ export const Header = () => {
                 onClick={() => setMenuState(!menuState)}
                 aria-label={menuState ? "Close Menu" : "Open Menu"}
                 className={`relative z-20 block cursor-pointer p-2.5 lg:hidden transition-colors duration-300
-                  ${showLightTheme ? "text-logo-purple" : "text-white"}
+                  ${showLightTheme ? "text-logo-gold" : "text-white"}
                 `}
               >
                 <Menu className="m-auto size-6 transition duration-300" />
